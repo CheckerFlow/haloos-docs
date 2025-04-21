@@ -11,4 +11,4 @@
 |TizenRT|https://github.com/Samsung/TizenRT|Apache License V2.0|该License无强制开放源码义务条款|
 |UnityTesting|https://github.com/ThrowTheSwitch/Unity|MIT License|该License无强制开放源码义务条款|
 
-> 提示：通过使用HaloOS，所有用户均同意遵守以下条款：应尊重他人知识产权并严格履行所有相关第三方许可要求。包括但不限于上表中HaloOS使用到的第三方开源软件，以及AutoSAR许可协议等
+> 提示：通过使用HaloOS，所有用户均同意遵守以下条款：应尊重他人知识产权并严格履行所有相关第三方许可要求。包括但不限于上表中HaloOS使用到的第三方开源软件，以及AUTOSAR许可协议等

@@ -2,22 +2,22 @@
 ## 1. 编译环境准备
 ### 1.1 安装VCOS Studio配置工具依赖插件
 #### 1.1.1. Windows系统
-1. 以【管理员权限】打开powershell，切换目录到`haloosspace/vcos`下
+1. 以【管理员权限】打开powershell，在根目录`haloosspace`下
 2. 执行以下命令
     ```bash
-    python ./vcos_studio/configurator/init_env.py -a
+    python ./vcos/vcos_studio/configurator/init_env.py -a
     ```
 #### 1.1.2. Linux系统
-1. 打开Linux终端，切换目录到下载的`haloosspace/vcos`目录下
+1. 打开Linux终端，在根目录`haloosspace`目录下
 2. 执行以下命令
     ```bash
     sudo apt update
     sudo apt install python3.8-venv libxcb-cursor0
-    python ./vcos_studio/configurator/init_env.py -a
+    python ./vcos/vcos_studio/configurator/init_env.py -a
     ```
     > 在高版本的Ubuntu下如果python3.8-venv找不到，请运行`sudo add-apt-repository ppa:deadsnakes/ppa`以添加 deadsnakes PPA（提供旧版本 Python），后再次运行上述命令
 ### 1.2. 安装编译工具链
-在`heloosspace`根目录，执行以下命令安装编译工具链：
+在`haloosspace`目录，执行以下命令安装编译工具链：
 ```bash
 python ./vcos/build/compiling_env.py
 ```
@@ -32,7 +32,7 @@ python ./vcos/build/compiling_env.py
 
 ## 2. 编译
 ### 2.1. 一键编译
-- 切换到haloosspace/build目录：
+- 切换到`haloosspace/build`目录：
   ```bash
   cd ./build
   ```

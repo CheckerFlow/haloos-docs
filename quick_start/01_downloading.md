@@ -18,13 +18,13 @@ git的安装流程此处略过，编译过程还需要使用git的patch工具，
 
 git repo的安装流程如下：
 1. 下载[git repo官方压缩包](https://git-repo.info/releases/v0.7.8/git-repo-0.7.8-Windows-64.zip)，并解压
-2. 将解压后的repo.exe拷贝到系统用户的bin路径下（如C:\Users\YourName\bin，注意该路径需要添加进环境变量）
+2. 将解压后的git-repo.exe拷贝到git安装目录cmd路径下（如C:\Program Files\Git\cmd，注意该路径安装git时已经添加进环境变量，如果没有添加，需要执行以下步骤3~5）
 3. 按 Win + S 搜索 “环境变量” → 选择 “编辑系统环境变量”
-4. 在 “用户变量” 中找到 Path → 点击 “编辑” → “新建” → 添加上述bin路径 → 保存
+4. 在 “用户变量” 中找到 Path → 点击 “编辑” → “新建” → 添加上述cmd路径 → 保存
 5. 重启 PowerShell 并运行以下命令，如果显示版本号即安装成功
     ```powershell
     git --version # 应输出版本信息  
-    git repo --version  # 应输出版本信息  
+    git-repo --version  # 应输出版本信息  
     ```
 ### 1.3. 下载代码
 1. 生成/添加ssh密钥，请按[gitee ssh密钥添加流程](https://gitee.com/help/articles/4181#article-header0)进行
@@ -41,9 +41,9 @@ git repo的安装流程如下：
     cd haloosspace
     rm -r ./.repo/
     git-repo init -u git@gitee.com:haloos/manifests.git -b master -m default.xml
-    git repo sync
+    git-repo sync
     ```
-    > 关于git repo的更多使用，可以输入`git repo -h`查看
+    > 关于git repo的更多使用，可以输入`git-repo -h`查看
 
 ## 2. Linux系统（Ubuntu）
 ### 2.1. 安装Python 3.8.10

@@ -55,7 +55,7 @@ sudo apt install gcc
 5. vcos_sim镜像成功启动以后，可以在Linux系统的vscode中安装Docker、Dev Containers插件  
 6. 在vscode中通过安装的插件连接vcos_sim容器，即可在vscode中进行调试  
 ![vscode连接vcos_sim](../_static/image/quick_start/vscode-connect-docker.png)
-7. 在vscode中打开holoosspace文件夹
+7. 在vscode中打开haloosspace文件夹
 
 #### 2.1.2. 在linux系统中执行编译
 在[工程编译](./02_compiling.md)章节，已经详细介绍了如何完成编译，支持在开发板上运行。这里将rt_demo运行在我们的虚拟仿真环境上，需要切换到`haloosspace/vcos/build`目录，执行以下命令编译支持模拟器运行的镜像：

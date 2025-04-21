@@ -56,17 +56,15 @@ VBSLite针对车控MCU资源受限场景下，突破传统DDS实现范式，通�
 
 基于两个开发板进行验证，分别连接到Swich上，通过PC端采集的数据展示MVBS的资源开销及通信性能
 
-<p align="center" >
-    <img src="../_static/image/tech_cases/vbslite_practice_4.1.png" style="max-width: 60%; height: auto;" /></a>
-</p>
+![](../_static/image/tech_cases/vbslite_practice_4.1.png)
 
 ### 4.2. 软件依赖库
 
 由于DEMO在演示过程中需要运行python脚本，实时进行性能监控和展示，所以可能在演示之前还需要安装以下python库：
 
-* PySide2
-* matplotlib
-* numpy
+* PySide2 == 5.15.2.1
+* matplotlib == 3.7.2
+* numpy == 1.23.5
 
 ### 4.3 低开销演示
 
@@ -80,10 +78,13 @@ VBSLite针对车控MCU资源受限场景下，突破传统DDS实现范式，通�
    - A开发板发布topic1-topic150, 同时订阅B板子发布的topic151-topic300，共计300个通信端点
    - B开发板发布topic151-topic300, 同时订阅A板子发布的topic1-topic150，共计300个通信端点
 2. 数据大小
+
    topic size为4-1000Byte不等
 3. 发送周期
+
    数据发生周期为50ms-2000ms不等
 4. 通信QoS
+
    所有topic采用均默认qos
 
 #### 4.3.2. 操作流程
@@ -91,84 +92,82 @@ VBSLite针对车控MCU资源受限场景下，突破传统DDS实现范式，通�
 1. 刷机（可选）
 
    如果是首次操作，需先将编译好的固件刷进两个开发板，板子上电后就会直接运行demo，开始周期性打印LOG，刷机教程参考"***VBSLite DEMO演示刷机教程***”，如果是已经成功刷过固件的板子，则可以跳过此步骤，直接观看演示结果
-2. 运行 VBSLite_open_source_demo_system.py脚本，打开VBSLite开源DEMO演示系统，页面如下图所示：
+2. 将开发板串口输出的log实时保存到log文件中，如log.txt。
+3. 运行 VBSLite_open_source_demo_system.py脚本，此脚本需要上述log文件作为输入，打开VBSLite开源DEMO演示系统，页面如下图所示：
 
-   <p align="center" >
-      <img src="../_static/image/tech_cases/vbslite_practice_4.3.2.jpg" style="max-width: 70%; height: auto;" /></a>
-   </p>
-3. 点击"**低开销演示**"按钮
+   ![](../_static/image/tech_cases/vbslite_practice_4.3.2.png)
+4. 点击"**低开销演示**"按钮
+
+## 注意
+
+- 观看内存结果也可以直接运行monitor_vbslite_ram_usage.py脚本，同样需要传入log文件；
+- 由于静态内存计算涉及到编译生成产物，计算工具中提供了默认目录，如果需要移植，需自行修改工具脚本。
 
 #### 4.3.3. 结果展示
 
-先基于静态内存统计工具先计算出静态内存大小，同时demo中周期性打印动态内存大小，工具实时解析LOG，预期结果如下图所示：
+预期结果如下图所示：
 
-<p align="center" >
-      <img src="../_static/image/tech_cases/vbslite_practice_4.3.3.png" style="max-width: 70%; height: auto;" /></a>
-   </p>
+   ![](../_static/image/tech_cases/vbslite_practice_4.3.3.png)
 
 ### 4.4 低时延演示
 
 #### 4.4.1. demo设计
 
-参考Cyclonedds的ddsperf测试方法，从上述300个topic中选取2对topic基于（Round-Trip Time, RTT）测试方法进行时延测试，topic数据类型和测试步骤如下：
-
-```c
-struct DataType{
-    long long time_ns;
-}
-```
+参考Cyclonedds的ddsperf测试方法，从上述300个topic中选取2对topic基于（Round-Trip Time, RTT）测试方法进行时延测试，测试步骤如下：
 
 1. 在开发板1中先获取当前时间戳T1，并赋值给Topic1的time_ns中，同时由pub1将将数据发送到开发板2中
 2. 在开发板2中sub1收到数据后立即将T1赋值到Topic2的time_ns中，同时由pub2将数据发回到开发板1中
 3. 在开发板1中sub2收到数据后记录时间戳T2并解析T1，则端到端时延为（T2-T1）/ 2
-   <p align="center" >
-      <img src="../_static/image/tech_cases/vbslite_practice_4.4.1.png" style="max-width: 70%; height: auto;" /></a>
-   </p>
+
+   ![](../_static/image/tech_cases/vbslite_practice_4.4.1.png)
 
 #### 4.4.2. 操作流程
 
 1. 刷机（可选）
+
    **参考4.3.2-1**
+
 2. 打开VBSLite开源DEMO演示系统，并点击"**高可靠演示**"按钮
-   **参考4.3.2-2**
+
+   **参考4.3.2-3**
+
+## 注意
+
+- 观看时延结果也可以直接运行monitor_vbslite_e2e_latency.py脚本，同样需要传入log文件
 
 #### 4.4.3. 结果展示
 
-demo中周期性打印时延1S内平均时延结果，由工具实时解析LOG并绘制图形，预期结果如下图所示：
+预期结果如下图所示：
 
-<p align="center" >
-      <img src="../_static/image/tech_cases/vbslite_practice_4.4.3.png" style="max-width: 70%; height: auto;" /></a>
-   </p>
+![](../_static/image/tech_cases/vbslite_practice_4.4.3.png)
 
 ### 4.5 高可靠演示
 
 #### 4.5.1. demo设计
 
-在上述300个Topic中选取一对Topic进行丢包率测试，topic数据类型和测试步骤如下：
+在上述300个Topic中选取一对Topic进行丢包率测试，测试步骤如下：
 
-```c
-struct Datatype {
-    unsigned long long SN;
-}
-```
+1. 在node2中由pub周期性的发送数据，并在每个数据包中记录当前的序号SN，其中SN单调递增；
+2. 在node1中由sub收到数据包后解析SN并与上一个数据包进行比较，统计总数据包和未收到的个数。
 
-1. 由开发板1由pub周期性的发送数据，并在每个数据包中记录当前的序号SN，其中SN单调递增
-2. 在开发板2由sub收到数据包后解析SN并与上一个数据包进行比较，统计总数据包和未收到的个数
-   <p align="center" >
-      <img src="../_static/image/tech_cases/vbslite_practice_4.5.1.png" style="max-width: 70%; height: auto;" /></a>
-   </p>
+![](../_static/image/tech_cases/vbslite_practice_4.5.1.png)
 
 #### 4.5.2. 操作流程
 
 1. 刷机（可选）
+
    **参考4.3.2-1**
+
 2. 打开VBSLite开源DEMO演示系统，点击"**高可靠演示**"按钮
-   **参考4.3.2-2**
+
+   **参考4.3.2-3**
+
+## 注意
+
+- 观看丢包结果也可以直接运行monitor_vbslite_packet_loss.py脚本，同样需要传入log文件
 
 #### 4.5.3. 结果展示
 
-demo中周期打印数据接收个数及丢包个数，由工具实时解析LOG，并计算丢包率，预期结果如下图所示：
+预期结果如下图所示：
 
-<p align="center" >
-   <img src="../_static/image/tech_cases/vbslite_practice_4.5.3.png" style="max-width: 70%; height: auto;" /></a>
-</p>
+![](../_static/image/tech_cases/vbslite_practice_4.5.3.png)
