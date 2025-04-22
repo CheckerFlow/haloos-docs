@@ -90,6 +90,10 @@ python .\trace_processor.py -m bin_to_ftrace -data logs\11_27_180103 (11_27_1801
 
 在/vcos/components/rt_framework/plug_in/auto_config/路径下执行命令：python .\trace_data_parse.py dt，解析ftrace文件，同时会绘制出每个Task所有采样点的图，位于/apps/rt_demo/platform_cfg/tc397_cfg/config/Export路径下：
 ![图12 tracedata](../_static/image/tech_cases/realtime_tracedate.png)
+
+用户需要通过弹窗选择当前的项目工程路径，以便于上述的采样点绘图能保存到正确的工程下：
+![图30 tracedata](../_static/image/tech_cases/realtime_pathselest.png)
+
 ![图13 traceplot](../_static/image/tech_cases/realtime_traceplot.png)
 
 ### 4.3. 优化效果
