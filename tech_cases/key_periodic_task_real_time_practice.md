@@ -46,16 +46,16 @@
 ![图4整体操作过程](../_static/image/tech_cases/realtime_process.png)
 
 #### 4.2.1. rt_demo工程的编译、烧录、运行
-- windows环境下直接双击vcos_studio/configurator/configurator.bat打开UI界面；
-- Linux环境下运行./vcos_studio/configurator/configurator.sh打开UI界面；
-- 加载Demo工程的配置文件，位于/examples/rt_demo/platform_cfg/tc397_cfg.vcosproject
+- windows环境下直接双击/vcos/vcos_studio/configurator/configurator.bat打开UI界面；
+- Linux环境下运行./vcos/vcos_studio/configurator/configurator.sh打开UI界面；
+- 加载Demo工程的配置文件，位于/apps/rt_demo/platform_cfg/tc397_cfg.vcosproject
 生成代码、[编译](../quick_start/02_compiling.md)、[运行](../quick_start/03_running.md)的步骤请参考“快速开始”章节
 
 ![图5打开rt_demo工程](../_static/image/tech_cases/realtime_open_project.png)
 
 #### 4.2.2. 用Trace测试性能数据
 抖动优化功能依赖于性能测试数据，需要利用Trace模块进行性能数据采集，Trace的详细配置操作步骤请参考实时性分析工具用户手册，这里简单描述一下ftrace格式的log文件获取的操作：
-- 开始采集，在/vcos_studio/halo_trace目录下执行命令：
+- 开始采集，在/tools/halo_trace目录下执行命令：
 ```python
 python ./trace_processor.py -m online -device ./device_conf.json -log ./logs
 ```
@@ -68,27 +68,27 @@ python ./trace_processor.py -m online -device ./device_conf.json -log ./logs
 ```python
 python .\trace_processor.py -m bin_to_ftrace -data logs\11_27_180103 (11_27_180103这个数字是生成的log文件，以时间戳命名)
 ```
-最终生成Ftrace格式的文件TC397_ftrace.log，将此文件放到/examples/rt_demo/platform_cfg/tc397_cfg/config/Import路径下：
+最终生成Ftrace格式的文件TC397_ftrace.log，将此文件放到/apps/rt_demo/platform_cfg/tc397_cfg/config/Import路径下：
 ![图6 ftrace路径](../_static/image/tech_cases/realtime_ftrace_path.png)
 
 #### 4.2.3. 触发抖动优化并等待执行结束
-在VCOS UI界面上点击 "Jitter Auto Optimization" 按钮触发一键抖动优化功能，这时会触发components\rt_framework\plug_in\auto_config\jitter.py脚本开始执行：
+在VCOS UI界面上点击 "Jitter Auto Optimization" 按钮触发一键抖动优化功能，这时会触发/vcos/components/rt_framework/plug_in/auto_config/jitter.py脚本开始执行：
 ![图7 jitteropt](../_static/image/tech_cases/realtime_jitteroptkey.png)
 
 **log信息查看**
 运行时主进程中数据预处理及出错信息会输出到UI界面下方的Log窗口，如下图：
 ![图8 jitterLogUI](../_static/image/tech_cases/realtime_jitterlogui.png)
-并行计算多进程的遗传算法及仿真时的数据及出错信息位于/examples/rt_demo/platform_cfg/tc397_cfg/config/Export路径下：
+并行计算多进程的遗传算法及仿真时的数据及出错信息位于/apps/rt_demo/platform_cfg/tc397_cfg/config/Export路径下：
 ![图9 jitterLog](../_static/image/tech_cases/realtime_jitterlog.png)
 
 #### 4.2.4. 优化结果自动写回
 抖动优化功能的实现是根据实际的性能测试数据，利用遗传算法自动寻找最优的任务激活时间偏移量，通过调度仿真模拟程序动态的构建任务的实际执行情况，经过多次循环迭代，最终找到任务激活时间偏移量的最优解，使多个任务激活时间离散化，避免了某个时刻需要处理的任务数多，某个时刻需要处理的任务数少，由此而产生的任务周期抖动。工具自动将这些时间偏移量数据回填到配置中。
 ![图10 datewriteback](../_static/image/tech_cases/realtime_datewritebacki.png)
 
-最后，生成代码，编译后烧录到板子中运行（详细步骤请参考“快速开始”章节），重新利用trace模块采集性能数据，生成ftrace文件，通过components\rt_framework\plug_in\auto_config\trace_data_parse.py解析脚本解析出TC397_ftrace.log数据，查看抖动优化的效果。
+最后，生成代码，编译后烧录到板子中运行（详细步骤请参考“快速开始”章节），重新利用trace模块采集性能数据，生成ftrace文件，通过/vcos/components/rt_framework/plug_in/auto_config/trace_data_parse.py解析脚本解析出TC397_ftrace.log数据，查看抖动优化的效果。
 ![图11 codegen](../_static/image/tech_cases/realtime_codegen.png)
 
-在components\rt_framework\plug_in\auto_config路径下执行命令：python .\trace_data_parse.py dt，解析ftrace文件，同时会绘制出每个Task所有采样点的图，位于/examples/rt_demo/platform_cfg/tc397_cfg/config/Export路径下：
+在/vcos/components/rt_framework/plug_in/auto_config/路径下执行命令：python .\trace_data_parse.py dt，解析ftrace文件，同时会绘制出每个Task所有采样点的图，位于/apps/rt_demo/platform_cfg/tc397_cfg/config/Export路径下：
 ![图12 tracedata](../_static/image/tech_cases/realtime_tracedate.png)
 ![图13 traceplot](../_static/image/tech_cases/realtime_traceplot.png)
 
