@@ -7,7 +7,7 @@
 |scenario-execution|https://github.com/IntelLabs/scenario_execution|Apache License V2.0|该License无强制开放源码义务条款|
 |nuttx|https://github.com/apache/nuttx|Apache License V2.0|该License无强制开放源码义务条款|
 |lwip|http://savannah.nongnu.org/projects/lwip/|BSD 3-Clause License|该License无强制开放源码义务条款|
-|PX4-Autopilot|https://pixhawk.ethz.ch/px4/|BSD 3-Clause License|该License无强制开放源码义务条款|
+|PX4-Autopilot|https://github.com/PX4/PX4-Autopilot|BSD 3-Clause License|该License无强制开放源码义务条款|
 |TizenRT|https://github.com/Samsung/TizenRT|Apache License V2.0|该License无强制开放源码义务条款|
 |UnityTesting|https://github.com/ThrowTheSwitch/Unity|MIT License|该License无强制开放源码义务条款|
 

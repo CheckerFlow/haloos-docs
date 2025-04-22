@@ -10,6 +10,7 @@
 2. 重启powershell，输入`python --version`，如果输出3.8.10版本，表示安装成功
 ### 1.2. 安装git repo工具
 代码下载同时依赖git和git repo，如果没有安装git请 [下载并安装](https://git-scm.com/downloads/win)
+
 git的安装流程此处略过，编译过程还需要使用git的patch工具，Windows系统需要将patch工具路径添加到PATH环境变量：
 1. 找到git所在的安装路径，添加\usr\bin后就是patch.exe所在路径（例如：C:\Program Files\Git\usr\bin）
 2. 按 Win + S 搜索 “环境变量” → 选择 “编辑系统环境变量”
@@ -39,7 +40,7 @@ git repo的安装流程如下：
     ```bash
     mkdir haloosspace
     cd haloosspace
-    rm -r ./.repo/
+    rm -r ./.repo/  # 如此前有同步失败，需要先删除原有.repo目录；如果没有.repo目录，可以忽略此步骤
     git-repo init -u git@gitee.com:haloos/manifests.git -b master -m default.xml
     git-repo sync
     ```
@@ -85,7 +86,7 @@ git repo的安装流程如下：
     ```bash
     mkdir haloosspace
     cd haloosspace
-    rm -rf ./.repo/
+    rm -rf ./.repo/  # 如此前有同步失败，需要先删除原有.repo目录；如果没有.repo目录，可以忽略此步骤
     repo init -u git@gitee.com:haloos/manifests.git -b master -m default.xml
     repo sync
     ```

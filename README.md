@@ -155,8 +155,10 @@ haloosspace
 │   ├── docs               # 智能车控系统开发者手册
 │   ├── drivers            # 硬件驱动（如I/O、CAN、以太网）
 │   ├── examples           # 系统关键示例
+│   ├── external           # 第三方开源软件
 │   ├── include            # 全局头文件（POSIX/功能栈接口定义，当前为空）
 │   ├── kernel             # 内核源码
+│   ├── tests              # 测试框架与测试用例
 │   ├── vcos_studio        # VCOS配套配置、维测等工具功能实现
 │   └── vendor             # 第三方适配代码
 └── (...)                  # （暂未开源）其他子系统（如智能驾驶OS、虚拟化引擎等）
@@ -188,8 +190,8 @@ HaloOS现已适配多种开发平台，基于当前开源功能内容，下表�
 
 |可运行子系统|开发板/环境|芯片型号|主要功能|典型应用场景|参考购买链接|
 |-|-|-|-|-|-|
-|智能车控OS、通信总线|芯驰 E3650 Dev Kit 开发板套件|E3650|集成4个32位ARM Cortex R52 + CPU锁步核，支持多核并行处理；板上配备UART转串口芯片，用于和上位机进行交互；支持ADC接口、SENT接口、CAN-FD接口、LIN接口以及两个千兆以太网口；板上配备按键，支持低功耗模式快速验证；预留Flash、eMMC焊盘支持外扩存储介质|区域控制应用、电机驱动控制、电池管理等|[官方链接](https://www.semidrive.com/product/E3650)|
-|智能车控OS、通信总线|英飞凌 AURIX TC397 5V TFT 开发板|TC397|集成6个32位高性能CPU核（TC1.6.2P），支持多核并行处理；配备4个LED和蜂鸣器用于显示交互；支持CAN-FD接口、LIN接口、千兆以太网和USB/UART桥接通信；内置SD卡槽扩展存储功能|区域控制应用、电机驱动控制、电池管理等|[官方链接](https://www.infineon.com/cms/en/product/evaluation-boards/kit_a2g_tc397xa_3v3_tft/)|
+|智能车控OS、通信总线|芯驰 E3650 Dev Kit 开发板套件|E3650|集成4个32位ARM Cortex R52 + CPU锁步核，支持多核并行处理；板上配备UART转串口芯片，用于和上位机进行交互；支持ADC接口、SENT接口、CAN-FD接口、LIN接口以及两个千兆以太网口；板上配备按键，支持低功耗模式快速验证；预留Flash、eMMC焊盘支持外扩存储介质|区域控制应用、电驱控制应用、底盘控制应用、智能驾驶控制应用等|[官方链接](https://www.semidrive.com/product/E3650)|
+|智能车控OS、通信总线|英飞凌 KIT_A2G_TC397XA_3V3_TFT 开发板|TC397|集成6个32位高性能CPU核（TC1.6.2P），支持多核并行处理；配备4个LED和蜂鸣器用于显示交互；支持CAN-FD接口、LIN接口、千兆以太网和USB/UART桥接通信；内置SD卡槽扩展存储功能|区域控制应用、电驱控制应用、底盘控制应用、智能驾驶控制应用等|[官方链接](https://www.infineon.com/cms/en/product/evaluation-boards/kit_a2g_tc397xa_3v3_tft/)|
 |智能车控OS、通信总线|智能车控OS SIM 模拟器|-|提供基于Linux/WSL的虚拟化运行环境，无需硬件支持；支持中断信号模拟、以太通信（含VLAN）及虚拟网桥配置；集成虚拟以太驱动（vEth）实现TCP/IP协议栈；支持GDB调试工具|软件测试、开发调试、算法验证|无需购买，本项目自带（使用方式可参考[部署运行流程](quick_start/03_running.md)）|
 
 ## 10. 许可协议
