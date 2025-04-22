@@ -18,7 +18,9 @@ git的安装流程此处略过，编译过程还需要使用git的patch工具，
 4. 用管理员权限重启powershell，执行`patch --version`，输出版本号即表示安装成功
 
 git repo的安装流程如下：
-1. 下载[git repo官方压缩包](https://git-repo.info/releases/v0.7.8/git-repo-0.7.8-Windows-64.zip)，并解压
+1. 下载 git repo 工具并解压
+    1. [Windows 32 位版本点此下载](https://gitee.com/alibaba/git-repo-go/releases/download/v0.7.8/git-repo-0.7.8-Windows-32.zip)
+    2. [Windows 64 位版本点此下载](https://gitee.com/alibaba/git-repo-go/releases/download/v0.7.8/git-repo-0.7.8-Windows-64.zip)
 2. 将解压后的git-repo.exe拷贝到git安装目录cmd路径下（如C:\Program Files\Git\cmd，注意该路径安装git时已经添加进环境变量，如果没有添加，需要执行以下步骤3~5）
 3. 按 Win + S 搜索 “环境变量” → 选择 “编辑系统环境变量”
 4. 在 “用户变量” 中找到 Path → 点击 “编辑” → “新建” → 添加上述cmd路径 → 保存
