@@ -6,8 +6,8 @@
 - 程序烧录工具：
   E3650支持多种烧录工具(如Jlink、Trace32等)，开发者需根据实际需求选择并自备工具。
 - 程序烧录：
-  程序烧录方法请参考[SemiDrive E3650_DEV_KIT 开发板烧录方法]()
-  程序调试方法请参考[SemiDrive E3650_DEV_KIT 开发板调试方法]()
+  程序烧录方法请参考[SemiDrive E3650_DEV_KIT 开发板烧录方法](https://gitee.com/haloos/vcos_vendor_semidrive/blob/master/docs/SemiDrive%20E3650_DEV_KIT%20%E5%BC%80%E5%8F%91%E6%9D%BF%E7%83%A7%E5%BD%95%E6%96%B9%E6%B3%95.md)
+  程序调试方法请参考[SemiDrive E3650_DEV_KIT 开发板调试方法](https://gitee.com/haloos/vcos_vendor_semidrive/blob/master/docs/SemiDrive%20E3650_DEV_KIT%20%E5%BC%80%E5%8F%91%E6%9D%BF%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.md)
 
 ### 1.2. Infineon A2G_TC397_5V_TFT开发板烧录运行
 - 开发板：

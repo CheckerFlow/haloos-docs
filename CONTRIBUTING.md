@@ -6,7 +6,7 @@
 为了避免开源许可证协议冲突或侵犯他人知识产权， 您在贡献代码和文档前，需要签署贡献者许可协议(Contributor License Agreement， CLA)，以确保您贡献的代码或文档
 是自己原创，或引用的第三方代码不与Apache License 2.0协议冲突。
 
-CLA 签署页面: [Gitee CLA（开源贡献者协议）签署页面](https://gitee.com/organizations/haloos/cla/haloos_cla)
+CLA 签署页面: [Gitee CLA（开源贡献者协议）签署页面](https://gitee.com/organizations/haloos/cla/halooscla)
 
 检查CLA签署状态: [Gitee 我签署的 CLA（开源贡献者协议）页面](https://gitee.com/profile/clas)
 
