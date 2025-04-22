@@ -3,8 +3,8 @@
 此开源项目遵循Apache License 2.0许可证协议。
 
 ## 1. 签署贡献者许可协议
-为了避免开源许可证协议冲突或侵犯他人知识产权， 您在贡献代码和文档前，需要签署贡献者许可协议(Contributor License Agreement， CLA)，已确保您贡献的代码或文档
-是自己原创，或引用的三方代码不与Apache License 2.0协议冲突。
+为了避免开源许可证协议冲突或侵犯他人知识产权， 您在贡献代码和文档前，需要签署贡献者许可协议(Contributor License Agreement， CLA)，以确保您贡献的代码或文档
+是自己原创，或引用的第三方代码不与Apache License 2.0协议冲突。
 
 CLA 签署页面: [Gitee CLA（开源贡献者协议）签署页面](https://gitee.com/organizations/haloos/cla/haloos_cla)
 
@@ -12,9 +12,9 @@ CLA 签署页面: [Gitee CLA（开源贡献者协议）签署页面](https://git
 
 ## 2. 环境准备
 为了顺利参与项目贡献，您需要提前准备必要的贡献工具
-1. git，此项目使用git管理代码和文档变更，如果您的电脑没有预置git工具，请根据您的电脑系统下载对应的git工具, https://gitee.com/help/categories/43 。
+1. git，此项目使用git管理代码和文档变更，如果您的电脑没有预置git工具，请根据您的电脑系统下载对应的git工具，https://gitee.com/help/categories/43。
 2. ssh公钥设置，下载项目代码可以使用https协议和ssh协议，由于https协议下载每次都需要输入密码，比较繁琐。 推荐使用ssh协议下载仓库代码，需要预先设置ssh公钥，
-具体设置步骤可参考 https://gitee.com/help/categories/38 。
+具体设置步骤可参考 https://gitee.com/help/categories/38。
 
 ## 3. 总体流程
 贡献的总体流程预览如下图
@@ -39,7 +39,7 @@ CLA 签署页面: [Gitee CLA（开源贡献者协议）签署页面](https://git
 ```bash
 git add .  # 添加自己的修改文件
 git commit -s # 确认自己的修改提交，并添加Signed-off-by，注意邮箱需和签署CLA的邮箱地址一致
-git push origin master # 推送到自己账号下仓库，master分支可按需修改
+git push origin master # 推送到自己账号下仓库，master分支（可按需修改）
 ```
 ## 7. 请求合入代码或文档
 ### 7.1. 创建Pull Request
@@ -96,7 +96,7 @@ git push origin master # 推送到自己账号下仓库，master分支可按需�
 ![](_static/image/contribution/feature_create_01.png)
 
 ## 9. 安全漏洞
-如果您发现安全漏洞，请**不要**提公开Issue，请点击[理想安全应急响应中心](https://security.lixiang.com/index) 上报安全漏洞。
+如果您发现安全漏洞，请**不要**提公开Issue，请点击[理想安全应急响应中心](https://security.lixiang.com/index)上报安全漏洞。
 
 ## 10. 感谢
 感谢您对此开源项目的贡献！
