@@ -1,0 +1,7 @@
+#Disclaimer
+
+This software is provided "as is" and does not provide any warranties, express or implied, including but not limited to warranties of fitness for a particular purpose and non-infringement.The author or copyright holder shall not be liable for any direct, indirect or incidental damages (including but not limited to loss of data, loss of profits or business interruptions) arising from the use of this software.
+If this software contains third-party code, libraries or components, its disclaimer and license terms shall prevail.Users shall comply with all applicable open source license terms.
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BELIABLEFOR ANY DIRECT, INDIRECT, OR INCIDENTAL DAMAGES (INCLUDING BUT NOT LIMITED TO LOSS OF DATA, LOSS OF PROFITS, OR BUSINESS INTERRUPTION) ARISING OUT OF THE USE OF THIS SOFTWARE.
+IF THIS SOFTWARE CONTAINS THIRD-PARTY CODE, LIBRARIES OR COMPONENTS, THEIR DISCLAIMERS AND LICENSE TERMS SHALL PREVAIL ACCORDING TO THE ORIGINAL PROJECT NOTICE. YOU SHALL COMPLY WITH THE TERMS OF ALL APPLICABLE OPEN SOURCE LICENSE.
